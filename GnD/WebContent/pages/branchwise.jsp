@@ -1,7 +1,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib prefix="tag" uri="/WEB-INF/taglibs/customTaglib.tld"%>
+<%@ taglib prefix="tag" uri="/WEB-INF/taglibs/customTaglib.tld"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html
@@ -58,55 +58,60 @@
 		<div class="page-header-wrapper container">
 			<div class="main-logo">Giesecke &amp; Devrient</div>
 			<div class="tab-menu dark">
-<ul>
-				 	<li id="icons" ><a href="<c:url value='/loginuser/home'/>">Home</a></li>
-                		
-                    	<li id="icons" class="selected"><a href="<c:url value='/search/searchcard'/>">Search</a></li>
-                    	
-                    	<c:if test='<%=request.isUserInRole("ROLE_HELPDESK")||request.isUserInRole("ROLE_ADMIN")%>' >
-						  <li id="icons"><a href="<c:url value='/master/masterdb'/>">Master DB</a></li>
-						  
-						<!-- <li id="icons"><a href="<c:url value='/master/email'/>">Email</a></li>-->
-					  </c:if>  
-					  
-					  <c:if test='<%=request.isUserInRole("ROLE_WAREHOUSE")||request.isUserInRole("ROLE_HELPDESK")||request.isUserInRole("ROLE_ADMIN")%>' >
-						  <li id="prototype"><a href="/GnD/shopfloor/misImoprt">MIS Import</a>
-					  </c:if>
-					  
-					   <c:if test='<%=request.isUserInRole("ROLE_SHOPFLOOR")||request.isUserInRole("ROLE_ADMIN")%>' >
-						  <li id="prototype"><a href="/GnD/shopfloor/home" method='POST'>Shop floor</a></li>
-					    </c:if>  
-                    	
-                    <c:if test='<%=request.isUserInRole("ROLE_ADMIN")%>' >
-                       
-                        
-<!--                         <li id="styleguide"><a href="#">I/O Config</a></li> -->
-<!--                         <li id="screens"><a href="#">Time-Out Config</a></li> -->
-						<li id="prototype"><a href="/GnD/notification/getdailymails">Notifications</a>
-				<!-- <li id="prototype"><a href="/GnD/shopfloor/home">Shop floor</a></li> -->		
-						<li id="prototype"><a href="/GnD/signUp/SignUp">Add User</a></li>
-<%-- 						 <li id="icons"><a href="<c:url value='/emailcont/editemailTable'/>">Email</a></li> --%>
-                                          
-					</c:if>					  
-					
-					   <c:if test='<%=request.isUserInRole("ROLE_WAREHOUSE")||request.isUserInRole("ROLE_ADMIN")%>' >
-						  <li id="prototype"><a href="/GnD/shopfloor/warehouse">Warehouse</a></li>
-						   </c:if> 
-						   
-					   <c:if test='<%=request.isUserInRole("ROLE_RTO")||request.isUserInRole("ROLE_ADMIN")%>' >
-						  <li id="prototype"  ><a href="/GnD/shopfloor/rto">RTO</a></li>
-					  </c:if>
-					   <c:if test='<%=request.isUserInRole("ROLE_DATAGEN")||request.isUserInRole("ROLE_ADMIN")%>' >
-                    	<li id="icons" ><a href="<c:url value='/qcprocess'/>">QC</a></li>
+				<ul>
+					<li id="icons"><a href="<c:url value='/loginuser/home'/>">Home</a></li>
+
+					<li id="icons" class="selected"><a
+						href="<c:url value='/search/searchcard'/>">Search</a></li>
+
+					<c:if
+						test='<%=request.isUserInRole("ROLE_HELPDESK") || request.isUserInRole("ROLE_ADMIN")%>'>
+						<li id="icons"><a href="<c:url value='/master/masterdb'/>">Master
+								DB</a></li>
+
 					</c:if>
-					   	<li id="prototype"><a href="/GnD/search/getReport">Reports</a></li>
-					      <li id="prototype"><a href="javascript:formSubmit()"> Logout</a>
-                    </ul>
+
+					<c:if
+						test='<%=request.isUserInRole("ROLE_WAREHOUSE") || request.isUserInRole("ROLE_HELPDESK")
+						|| request.isUserInRole("ROLE_ADMIN")%>'>
+						<li id="prototype"><a href="/GnD/shopfloor/misImoprt">MIS
+								Import</a>
+					</c:if>
+
+					<c:if
+						test='<%=request.isUserInRole("ROLE_SHOPFLOOR") || request.isUserInRole("ROLE_ADMIN")%>'>
+						<li id="prototype"><a href="/GnD/shopfloor/home"
+							method='POST'>Shop floor</a></li>
+					</c:if>
+
+					<c:if test='<%=request.isUserInRole("ROLE_ADMIN")%>'>
+
+
+						<li id="prototype"><a href="/GnD/notification/getdailymails">Notifications</a>
+						<li id="prototype"><a href="/GnD/signUp/SignUp">Add User</a></li>
+
+					</c:if>
+
+					<c:if
+						test='<%=request.isUserInRole("ROLE_WAREHOUSE") || request.isUserInRole("ROLE_ADMIN")%>'>
+						<li id="prototype"><a href="/GnD/shopfloor/warehouse">Warehouse</a></li>
+					</c:if>
+
+					<c:if
+						test='<%=request.isUserInRole("ROLE_RTO") || request.isUserInRole("ROLE_ADMIN")%>'>
+						<li id="prototype"><a href="/GnD/shopfloor/rto">RTO</a></li>
+					</c:if>
+					<c:if
+						test='<%=request.isUserInRole("ROLE_DATAGEN") || request.isUserInRole("ROLE_ADMIN")%>'>
+						<li id="icons"><a href="<c:url value='/qcprocess'/>">QC</a></li>
+					</c:if>
+					<li id="prototype"><a href="/GnD/search/getReport">Reports</a></li>
+					<li id="prototype"><a href="javascript:formSubmit()">
+							Logout</a>
+				</ul>
 
 			</div>
-				<div class="adress-text">
-				
-				</div>
+			<div class="adress-text"></div>
 			<p style="float: right; margin-top: 0px;"></p>
 		</div>
 
@@ -120,20 +125,28 @@
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/track">Mobile
 									No</a></li>
-							<li><a href="${pageContext.request.contextPath}/awbsearch">Card AWB</a></li>
-							<li><a href="${pageContext.request.contextPath}/pinawbpage">Pin AWB</a></li>
-							<li><a href="${pageContext.request.contextPath}/prerequesttoadd">Bank and ac no </a></li>
-							<li><a href="${pageContext.request.contextPath}/rsnpage">RSN </a></li>
-							<li  class="selected"><a href="${pageContext.request.contextPath}/prerequest">Branchwise</a></li>
-							<li><a href="${pageContext.request.contextPath}/customerid">Customer Id</a></li>
+							<li><a href="${pageContext.request.contextPath}/awbsearch">Card
+									AWB</a></li>
+							<li><a href="${pageContext.request.contextPath}/pinawbpage">Pin
+									AWB</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/prerequesttoadd">Bank
+									and ac no </a></li>
+							<li><a href="${pageContext.request.contextPath}/rsnpage">RSN
+							</a></li>
+							<li class="selected"><a
+								href="${pageContext.request.contextPath}/prerequest">Branchwise</a></li>
+							<li><a href="${pageContext.request.contextPath}/customerid">Customer
+									Id</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="right-content record">
 				<h2 class="blue-text">Branchwise</h2>
-				<form name="branchwise" action="${pageContext.request.contextPath}/branchwise" method="post"
-					onsubmit="return validateForm();">
+				<form name="branchwise"
+					action="${pageContext.request.contextPath}/branchwise"
+					method="post" onsubmit="return validateForm();">
 					<table id="searchtable">
 						<tr>
 							<th></th>
@@ -165,10 +178,11 @@
 						</tr>
 						<tr>
 							<th align="left">BranchType</th>
-							<td><select id="branchType" name="branchType" class="text-field branch">
-										<option value="0">Home Branch</option>
-										<option value="1">Issue Branch</option>
-									</select></td>
+							<td><select id="branchType" name="branchType"
+								class="text-field branch">
+									<option value="0">Home Branch</option>
+									<option value="1">Issue Branch</option>
+							</select></td>
 							<td><label id="errmsg"></label></td>
 						</tr>
 
@@ -178,7 +192,8 @@
 						<tr>
 							<th align="left">Core file date</th>
 							<td><input type="text" id="dateFrom" name="dateFrom"
-								class="text-field text-field-with-addon" value="${dateFrom}"/> <!-- 			<input type=hidden id="hiddateFrom"  data-role="datebox" /> -->
+								class="text-field text-field-with-addon" value="${dateFrom}" />
+								<!-- 			<input type=hidden id="hiddateFrom"  data-role="datebox" /> -->
 							</td>
 						</tr>
 
@@ -188,14 +203,15 @@
 						<tr>
 							<td></td>
 							<td><input type="submit" class="btn btn-l btn-blue"
-								value="search" onclick="return validateForm();"/>
-								<input type="button"  value="reset" class="btn btn-l" onclick="return resetOne();"/></td>
+								value="search" onclick="return validateForm();" /> <input
+								type="button" value="reset" class="btn btn-l"
+								onclick="return resetOne();" /></td>
 						</tr>
 					</table>
 
 
 				</form>
-				
+
 				<p>${downloadResult}</p>
 				<div id="tableid">
 					<c:choose>
@@ -207,26 +223,26 @@
 							</h3>
 						</c:when>
 						<c:otherwise>
-						<c:if test="${records.size() > 0}">
-							<h4>
-								Search Results :
-								<c:out value="${count}" />
-							</h4>
+							<c:if test="${records.size() > 0}">
+								<h4>
+									Search Results :
+									<c:out value="${count}" />
+								</h4>
 
-								
-			
-<!-- 			<div class="table-header"> -->
-<!-- <!--                        <h3>Search Results : 14 Records</h3> -->
-<!--                         <button  id=" " type="button"  class="btn btn-only-img btn-only-img1 btn-s" onclick="location.href='/sbi/branchwiseReport'"> -->
-<%--      <img src="<c:url value='/resources/img/icons/download.png'/>" alt="Print"> --%>
-<!--                         </button> -->
-                                           
-<!--                     </div> -->
-							
+
+
+								<!-- 			<div class="table-header"> -->
+								<!-- <!--                        <h3>Search Results : 14 Records</h3> -->
+								<!--                         <button  id=" " type="button"  class="btn btn-only-img btn-only-img1 btn-s" onclick="location.href='/sbi/branchwiseReport'"> -->
+								<%--      <img src="<c:url value='/resources/img/icons/download.png'/>" alt="Print"> --%>
+								<!--                         </button> -->
+
+								<!--                     </div> -->
+
 								<table class="table">
 									<thead>
 										<tr>
-											
+
 											<th>Account</th>
 											<th>Card holder name</th>
 											<th>Branch Code</th>
@@ -235,7 +251,7 @@
 											<th>Approval Status</th>
 											<th>Pin dispatch Status</th>
 											<th>RSN</th>
-											<th>Is Non Card Issue Branch </th>
+											<th>Is Non Card Issue Branch</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -245,7 +261,7 @@
 										<c:forEach var="listValue" items="${records}">
 
 											<tr>
-												
+
 												<td><a
 													href="${pageContext.request.contextPath}/record?creditCardDetailsId=${listValue.creditCardDetailsId}">${listValue.primaryAcctNo}</a></td>
 												<td>${listValue.embossName}</td>
@@ -255,12 +271,12 @@
 												<td>${listValue.recordStatus}</td>
 												<td>${listValue.pinStatusString}</td>
 												<td>${listValue.rsn}</td>
-												<c:if test="${listValue.isNonCardIssueBranch == 0}"> 
-                               	<td>No</td>
-                               	</c:if>
-                               	<c:if test="${listValue.isNonCardIssueBranch == 1}"> 
-                               	<td>Yes</td>
-                               	</c:if>
+												<c:if test="${listValue.isNonCardIssueBranch == 0}">
+													<td>No</td>
+												</c:if>
+												<c:if test="${listValue.isNonCardIssueBranch == 1}">
+													<td>Yes</td>
+												</c:if>
 												<%
 													rowCount++;
 												%>
@@ -269,7 +285,7 @@
 
 									</tbody>
 								</table>
-									<tag:paginate max="15" offset="${offset}" count="${count}"
+								<tag:paginate max="15" offset="${offset}" count="${count}"
 									uri="${pageContext.request.contextPath}/branchwise?bank=${bank}&branch=${branch}&dateFrom=${dateFrom}"
 									next="&raquo;" previous="&laquo;" />
 							</c:if>
@@ -279,11 +295,12 @@
 			</div>
 		</div>
 	</div>
-	 <c:url value="/j_spring_security_logout" var="logoutUrl" />
-						<form action="${logoutUrl}" method="post" id="logoutForm">
-							<input type="hidden" name="${_csrf.parameterName}"	value="${_csrf.token}" />
-						</form>
-        </div>
+	<c:url value="/j_spring_security_logout" var="logoutUrl" />
+	<form action="${logoutUrl}" method="post" id="logoutForm">
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
+	</form>
+	</div>
 	<div class="clear"></div>
 	<div id="footer" class="page-footer">
 		<div class="container">
@@ -294,7 +311,7 @@
 					</div>
 					<!-- 					<ul class="footer-links"> -->
 					<!-- 						<li><p>Helpdesk Contact : 04439915827, Email : -->
-					
+
 					<!-- 								fics@gi-de.com</p></li> -->
 					<!-- 					</ul> -->
 				</div>
@@ -305,27 +322,28 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-	function formSubmit() {
-		document.getElementById("logoutForm").submit();
-  }
-
+		function formSubmit() {
+			document.getElementById("logoutForm").submit();
+		}
 	</script>
-	
+
 </body>
- <style>
-  ul.pagination { 
-    display: inline-block;
-     padding: 0; 
-     margin: 0; 
- } 
+<style>
+ul.pagination {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
 
- ul.pagination li {display: inline;} 
+ul.pagination li {
+	display: inline;
+}
 
- ul.pagination li a { 
-    color: black; 
-    float: left; 
-     padding: 8px 16px; 
-    text-decoration: none; 
- } 
- </style>
+ul.pagination li a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+</style>
 </html>
